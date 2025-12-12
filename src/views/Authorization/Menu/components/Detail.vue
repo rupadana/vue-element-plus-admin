@@ -41,7 +41,15 @@ const detailSchema = ref<DescriptionsSchema[]>([
     slots: {
       default: (data) => {
         const component = data.component
-        return <>{component === '#' ? 'TopLevelDirectory' : component === '##' ? '子Directory' : component}</>
+        return (
+          <>
+            {component === '#'
+              ? 'TopLevelDirectory'
+              : component === '##'
+                ? '子Directory'
+                : component}
+          </>
+        )
       }
     }
   },

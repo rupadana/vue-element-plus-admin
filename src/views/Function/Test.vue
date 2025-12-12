@@ -13,7 +13,9 @@ setTimeout(() => {
 
 <template>
   <ContentWrap>
-    <ElDivider>Component Method Validation (Globally Registered, Supports Dynamic Modification)</ElDivider>
+    <ElDivider
+      >Component Method Validation (Globally Registered, Supports Dynamic Modification)</ElDivider
+    >
     <ElRow :gutter="20">
       <ElCol :span="8">
         Add Permission:
