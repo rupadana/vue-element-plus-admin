@@ -68,16 +68,16 @@ const save = async () => {
     console.log(err)
   })
   if (valid) {
-    ElMessageBox.confirm('Is否确认Modify?', 'Tip', {
-      confirmButtonText: '确认',
+    ElMessageBox.confirm('Are you sure to modify?', 'Tip', {
+      confirmButtonText: 'Confirm',
       cancelButtonText: 'Cancel',
       type: 'warning'
     })
       .then(async () => {
         try {
           saveLoading.value = true
-          // This里CanCallModifyUserInformationInterface
-          ElMessage.success('ModifySuccess')
+          // This can call modify user information interface
+          ElMessage.success('Modified successfully')
         } catch (error) {
           console.log(error)
         } finally {

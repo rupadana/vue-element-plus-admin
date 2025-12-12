@@ -90,8 +90,8 @@ const save = async () => {
       .then(async () => {
         try {
           saveLoading.value = true
-          // This里CanCallModifyPasswordofInterface
-          ElMessage.success('ModifySuccess')
+          // This can call modify password interface
+          ElMessage.success('Modified successfully')
         } catch (error) {
           console.log(error)
         } finally {
@@ -106,5 +106,5 @@ const save = async () => {
 <template>
   <Form :rules="rules" @register="formRegister" :schema="formSchema" />
   <ElDivider />
-  <BaseButton type="primary" @click="save">确认Modify</BaseButton>
+  <BaseButton type="primary" @click="save">Confirm</BaseButton>
 </template>
