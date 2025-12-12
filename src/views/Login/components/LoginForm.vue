@@ -73,10 +73,10 @@ const schema = reactive<FormSchema[]>([
         width: '100%'
       },
       placeholder: 'admin or test',
-      // By下enterKeyTriggerLogin
+      // Press enter key to trigger login
       onKeydown: (_e: any) => {
         if (_e.key === 'Enter') {
-          _e.stopPropagation() // Prevent事件冒泡
+          _e.stopPropagation() // Prevent event bubbling
           signIn()
         }
       }

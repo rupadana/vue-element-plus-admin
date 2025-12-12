@@ -126,7 +126,7 @@ const crudSchemas = reactive<CrudSchema[]>([
         },
         options: [
           {
-            label: '重Want',
+            label: 'Important',
             value: 3
           },
           {

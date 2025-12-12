@@ -96,19 +96,19 @@ const saveAvatar = async () => {
       </div>
       <ElDivider />
     </ContentWrap>
-    <ContentWrap title="基本Data" class="flex-[3] ml-20px">
+    <ContentWrap title="Basic Data" class="flex-[3] ml-20px">
       <ElTabs v-model="activeName">
-        <ElTabPane label="基本Information" name="first">
+        <ElTabPane label="Basic Information" name="first">
           <EditInfo :user-info="userInfo" />
         </ElTabPane>
-        <ElTabPane label="ModifyPassword" name="second">
+        <ElTabPane label="Modify Password" name="second">
           <EditPassword />
         </ElTabPane>
       </ElTabs>
     </ContentWrap>
   </div>
 
-  <Dialog v-model="dialogVisible" title="ModifyAvatar" width="800px">
+  <Dialog v-model="dialogVisible" title="Modify Avatar" width="800px">
     <UploadAvatar ref="uploadAvatarRef" :url="userInfo?.avatarUrl || defaultAvatar" />
 
     <template #footer>

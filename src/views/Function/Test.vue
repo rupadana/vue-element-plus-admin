@@ -13,10 +13,10 @@ setTimeout(() => {
 
 <template>
   <ContentWrap>
-    <ElDivider>Group件Method判断（已经GlobalRegister，SupportDynamicModify）</ElDivider>
+    <ElDivider>Component Method Validation (Globally Registered, Supports Dynamic Modification)</ElDivider>
     <ElRow :gutter="20">
       <ElCol :span="8">
-        新增权限：
+        Add Permission:
         <Permission permission="add">
           <BaseButton type="primary"> Add </BaseButton>
         </Permission>
