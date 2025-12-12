@@ -4,77 +4,77 @@ import { SUCCESS_CODE } from '@/constants'
 
 const departmentList: any = []
 
-const citys = ['厦门总公司', '北京分公司', '上海分公司', '福州分公司', '深圳分公司', '杭州分公司']
+const citys = ['Xiamen Headquarters', 'Beijing Branch', 'Shanghai Branch', 'Fuzhou Branch', 'Shenzhen Branch', 'Hangzhou Branch']
 
 for (let i = 0; i < 5; i++) {
   departmentList.push({
-    // 部门名称
+    // Department name
     departmentName: citys[i],
     id: toAnyString(),
     createTime: '@datetime',
-    // 状态
+    // Status
     status: Mock.Random.integer(0, 1),
-    // 备注
+    // Remark
     remark: '@cword(10, 15)',
     children: [
       {
-        // 部门名称
-        departmentName: '研发部',
+        // Department name
+        departmentName: 'R&D Department',
         id: toAnyString(),
         createTime: '@datetime',
-        // 状态
+        // Status
         status: Mock.Random.integer(0, 1),
-        // 备注
+        // Remark
         remark: '@cword(10, 15)'
       },
       {
-        // 部门名称
-        departmentName: '产品部',
+        // Department name
+        departmentName: 'Product Department',
         id: toAnyString(),
         createTime: '@datetime',
-        // 状态
+        // Status
         status: Mock.Random.integer(0, 1),
-        // 备注
+        // Remark
         remark: '@cword(10, 15)'
       },
       {
-        // 部门名称
-        departmentName: '运营部',
+        // Department name
+        departmentName: 'Operations Department',
         id: toAnyString(),
         createTime: '@datetime',
-        // 状态
+        // Status
         status: Mock.Random.integer(0, 1),
-        // 备注
+        // Remark
         remark: '@cword(10, 15)'
       },
       {
-        // 部门名称
+        // Department name
         departmentName: '市场部',
         id: toAnyString(),
         createTime: '@datetime',
-        // 状态
+        // Status
         status: Mock.Random.integer(0, 1),
-        // 备注
+        // Remark
         remark: '@cword(10, 15)'
       },
       {
-        // 部门名称
+        // Department name
         departmentName: '销售部',
         id: toAnyString(),
         createTime: '@datetime',
-        // 状态
+        // Status
         status: Mock.Random.integer(0, 1),
-        // 备注
+        // Remark
         remark: '@cword(10, 15)'
       },
       {
-        // 部门名称
+        // Department name
         departmentName: '客服部',
         id: toAnyString(),
         createTime: '@datetime',
-        // 状态
+        // Status
         status: Mock.Random.integer(0, 1),
-        // 备注
+        // Remark
         remark: '@cword(10, 15)'
       }
     ]
@@ -82,7 +82,7 @@ for (let i = 0; i < 5; i++) {
 }
 
 export default [
-  // 列表接口
+  // List interface
   {
     url: '/mock/department/list',
     method: 'get',
@@ -141,7 +141,7 @@ export default [
       }
     }
   },
-  // 保存接口
+  // Save interface
   {
     url: '/mock/department/user/save',
     method: 'post',
@@ -153,7 +153,7 @@ export default [
       }
     }
   },
-  // 删除接口
+  // Delete interface
   {
     url: '/mock/department/user/delete',
     method: 'post',
@@ -172,7 +172,7 @@ export default [
       }
     }
   },
-  // 保存接口
+  // Save interface
   {
     url: '/mock/department/save',
     method: 'post',
@@ -184,7 +184,7 @@ export default [
       }
     }
   },
-  // 删除接口
+  // Delete interface
   {
     url: '/mock/department/delete',
     method: 'post',
