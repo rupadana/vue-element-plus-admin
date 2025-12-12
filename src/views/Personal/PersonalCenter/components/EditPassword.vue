@@ -49,7 +49,7 @@ const rules = reactive({
         const formData = await getFormData()
         const { newPassword2 } = formData
         if (val !== newPassword2) {
-          callback(new Error('新PasswordAnd确认新Password不一致'))
+          callback(new Error('New password and confirm password do not match'))
         } else {
           callback()
         }
@@ -63,7 +63,7 @@ const rules = reactive({
         const formData = await getFormData()
         const { newPassword } = formData
         if (val !== newPassword) {
-          callback(new Error('确认新PasswordAnd新Password不一致'))
+          callback(new Error('Confirm password and new password do not match'))
         } else {
           callback()
         }
@@ -82,8 +82,8 @@ const save = async () => {
     console.log(err)
   })
   if (valid) {
-    ElMessageBox.confirm('Is否确认Modify?', 'Tip', {
-      confirmButtonText: '确认',
+    ElMessageBox.confirm('Are you sure to modify?', 'Tip', {
+      confirmButtonText: 'Confirm',
       cancelButtonText: 'Cancel',
       type: 'warning'
     })

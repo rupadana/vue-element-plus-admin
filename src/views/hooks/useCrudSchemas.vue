@@ -177,7 +177,7 @@ const { allSchemas } = useCrudSchemas(crudSchemas)
         </ContentWrap>
       </ElCol>
       <ElCol :span="24">
-        <ContentWrap title="DetailGroup件DataStructure" class="mt-20px">
+        <ContentWrap title="Detail Component Data Structure" class="mt-20px">
           <JsonEditor v-model="allSchemas.detailSchema" />
         </ContentWrap>
       </ElCol>

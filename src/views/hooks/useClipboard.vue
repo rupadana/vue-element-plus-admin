@@ -21,6 +21,6 @@ const source = ref('')
         Current copied: <code>{{ text || 'none' }}</code>
       </p>
     </div>
-    <p v-else> 你of浏览器Not supported Clipboard API </p>
+    <p v-else> Your browser does not support Clipboard API </p>
   </ContentWrap>
 </template>

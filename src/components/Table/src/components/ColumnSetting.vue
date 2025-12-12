@@ -158,8 +158,8 @@ watch(
     </div>
     <template #footer>
       <div>
-        <BaseButton @click="restore">Also原</BaseButton>
-        <BaseButton type="primary" @click="confirm">确定</BaseButton>
+        <BaseButton @click="restore">Reset</BaseButton>
+        <BaseButton type="primary" @click="confirm">OK</BaseButton>
       </div>
     </template>
   </ElDrawer>

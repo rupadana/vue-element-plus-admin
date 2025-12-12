@@ -63,7 +63,7 @@ const schema = reactive<FormSchema[]>([
     componentProps: {
       options: [
         {
-          label: '重Want',
+          label: 'Important',
           value: 3
         },
         {
