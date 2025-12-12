@@ -12,46 +12,46 @@ defineProps({
 })
 
 const renderTag = (enable?: boolean) => {
-  return <ElTag type={!enable ? 'danger' : 'success'}>{enable ? '启用' : '禁用'}</ElTag>
+  return <ElTag type={!enable ? 'danger' : 'success'}>{enable ? 'Enable' : 'Disable'}</ElTag>
 }
 
 const detailSchema = ref<DescriptionsSchema[]>([
   {
     field: 'type',
-    label: '菜单类型',
+    label: 'MenuClass型',
     span: 24,
     slots: {
       default: (data) => {
         const type = data.type
-        return <>{type === 1 ? '菜单' : '目录'}</>
+        return <>{type === 1 ? 'Menu' : 'Directory'}</>
       }
     }
   },
   {
     field: 'parentName',
-    label: '父级菜单'
+    label: 'ParentLevelMenu'
   },
   {
     field: 'meta.title',
-    label: '菜单名称'
+    label: 'Menu名称'
   },
   {
     field: 'component',
-    label: '组件',
+    label: 'Group件',
     slots: {
       default: (data) => {
         const component = data.component
-        return <>{component === '#' ? '顶级目录' : component === '##' ? '子目录' : component}</>
+        return <>{component === '#' ? 'TopLevelDirectory' : component === '##' ? '子Directory' : component}</>
       }
     }
   },
   {
     field: 'name',
-    label: '组件名称'
+    label: 'Group件名称'
   },
   {
     field: 'meta.icon',
-    label: '图标',
+    label: 'Icon',
     slots: {
       default: (data) => {
         const icon = data.icon
@@ -69,15 +69,15 @@ const detailSchema = ref<DescriptionsSchema[]>([
   },
   {
     field: 'path',
-    label: '路径'
+    label: 'Path'
   },
   {
     field: 'meta.activeMenu',
-    label: '高亮菜单'
+    label: '高亮Menu'
   },
   {
     field: 'permissionList',
-    label: '按钮权限',
+    label: 'By钮权限',
     span: 24,
     slots: {
       default: (data: any) => (
@@ -95,7 +95,7 @@ const detailSchema = ref<DescriptionsSchema[]>([
   },
   {
     field: 'menuState',
-    label: '菜单状态',
+    label: 'MenuStatus',
     slots: {
       default: (data) => {
         return renderTag(data.menuState)
@@ -104,7 +104,7 @@ const detailSchema = ref<DescriptionsSchema[]>([
   },
   {
     field: 'meta.hidden',
-    label: '是否隐藏',
+    label: 'Is否Hide',
     slots: {
       default: (data) => {
         return renderTag(data.enableHidden)
@@ -113,7 +113,7 @@ const detailSchema = ref<DescriptionsSchema[]>([
   },
   {
     field: 'meta.alwaysShow',
-    label: '是否一直显示',
+    label: 'Is否一直Show',
     slots: {
       default: (data) => {
         return renderTag(data.enableDisplay)
@@ -122,7 +122,7 @@ const detailSchema = ref<DescriptionsSchema[]>([
   },
   {
     field: 'meta.noCache',
-    label: '是否清除缓存',
+    label: 'Is否ClearCache',
     slots: {
       default: (data) => {
         return renderTag(data.enableCleanCache)
@@ -131,7 +131,7 @@ const detailSchema = ref<DescriptionsSchema[]>([
   },
   {
     field: 'meta.breadcrumb',
-    label: '是否显示面包屑',
+    label: 'Is否Show面包屑',
     slots: {
       default: (data) => {
         return renderTag(data.enableShowCrumb)
@@ -140,7 +140,7 @@ const detailSchema = ref<DescriptionsSchema[]>([
   },
   {
     field: 'meta.affix',
-    label: '是否固定标签页',
+    label: 'Is否固定TagPage',
     slots: {
       default: (data) => {
         return renderTag(data.enablePinnedTab)
@@ -149,7 +149,7 @@ const detailSchema = ref<DescriptionsSchema[]>([
   },
   {
     field: 'meta.noTagsView',
-    label: '是否隐藏标签页',
+    label: 'Is否HideTagPage',
     slots: {
       default: (data) => {
         return renderTag(data.enableHiddenTab)
@@ -158,7 +158,7 @@ const detailSchema = ref<DescriptionsSchema[]>([
   },
   {
     field: 'meta.canTo',
-    label: '是否可跳转',
+    label: 'Is否可Jump',
     slots: {
       default: (data) => {
         return renderTag(data.enableSkip)

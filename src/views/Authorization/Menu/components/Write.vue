@@ -23,14 +23,14 @@ const props = defineProps({
 
 const handleClose = async (tag: any) => {
   const formData = await getFormData()
-  // 删除对应的权限
+  // DeleteCorrespondingof权限
   setValues({
     permissionList: formData?.permissionList?.filter((v: any) => v.value !== tag.value)
   })
 }
 
 const handleEdit = async (row: any) => {
-  // 深拷贝当前行数据到编辑行
+  // 深拷贝WhenBefore行Data到Edit行
   permissionEditingRow.value = { ...row }
 }
 
@@ -39,18 +39,18 @@ const handleSave = async () => {
   const index = formData?.permissionList?.findIndex((x) => x.id === permissionEditingRow.value.id)
   if (index !== -1) {
     formData.permissionList[index] = { ...permissionEditingRow.value }
-    permissionEditingRow.value = null // 重置编辑状态
+    permissionEditingRow.value = null // ResetEditStatus
   }
 }
 
 const showDrawer = ref(false)
-// 存储正在编辑的行的数据
+// Storage正InEditof行ofData
 const permissionEditingRow = ref<any>(null)
 
 const formSchema = reactive<FormSchema[]>([
   {
     field: 'type',
-    label: '菜单类型',
+    label: 'MenuClass型',
     component: 'RadioButton',
     value: 0,
     colProps: {
@@ -59,11 +59,11 @@ const formSchema = reactive<FormSchema[]>([
     componentProps: {
       options: [
         {
-          label: '目录',
+          label: 'Directory',
           value: 0
         },
         {
-          label: '菜单',
+          label: 'Menu',
           value: 1
         }
       ],
@@ -106,7 +106,7 @@ const formSchema = reactive<FormSchema[]>([
   },
   {
     field: 'parentId',
-    label: '父级菜单',
+    label: 'ParentLevelMenu',
     component: 'TreeSelect',
     componentProps: {
       nodeKey: 'id',
@@ -151,12 +151,12 @@ const formSchema = reactive<FormSchema[]>([
   },
   {
     field: 'component',
-    label: '组件',
+    label: 'Group件',
     component: 'Input',
     value: '#',
     componentProps: {
       disabled: true,
-      placeholder: '#为顶级目录，##为子目录',
+      placeholder: '#为TopLevelDirectory，##为子Directory',
       on: {
         change: (val: string) => {
           cacheComponent.value = val
@@ -260,7 +260,7 @@ const formSchema = reactive<FormSchema[]>([
                     ) : (
                       <>
                         <ElButton size="small" type="primary" onClick={() => handleEdit(row)}>
-                          编辑
+                          Edit
                         </ElButton>
                         <ElPopconfirm
                           title="Are you sure to delete this?"
@@ -269,7 +269,7 @@ const formSchema = reactive<FormSchema[]>([
                           {{
                             reference: () => (
                               <ElButton size="small" type="danger">
-                                删除
+                                Delete
                               </ElButton>
                             )
                           }}

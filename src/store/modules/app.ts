@@ -43,7 +43,7 @@ export const useAppStore = defineStore('app', {
       title: import.meta.env.VITE_APP_TITLE, // Title
       pageLoading: false, // Route jump loading
       breadcrumb: true, // Breadcrumb
-      breadcrumbIcon: true, // Breadcrumb图标
+      breadcrumbIcon: true, // BreadcrumbIcon
       collapse: false, // Collapse menu
       uniqueOpened: false, // Whether to keep only one submenu expanded
       hamburger: true, // Collapse icon

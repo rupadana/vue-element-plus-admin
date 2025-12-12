@@ -7,7 +7,7 @@ const { t } = useI18n()
 
 interface UseTableConfig {
   /**
-   * 是否初始化的时候请求一次
+   * Is否Initial化ofWhen候Please求一次
    */
   immediate?: boolean
   fetchDataApi: () => Promise<{
@@ -54,10 +54,10 @@ export const useTable = (config: UseTableConfig) => {
     }
   })
 
-  // Table实例
+  // TableInstance
   const tableRef = ref<typeof Table & TableExpose>()
 
-  // ElTable实例
+  // ElTableInstance
   const elTableRef = ref<ComponentRef<typeof ElTable>>()
 
   const register = (ref: typeof Table & TableExpose, elRef: ComponentRef<typeof ElTable>) => {
@@ -76,7 +76,7 @@ export const useTable = (config: UseTableConfig) => {
 
   const methods = {
     /**
-     * 获取表单数据
+     * GetTable单Data
      */
     getList: async () => {
       loading.value = true
@@ -95,8 +95,8 @@ export const useTable = (config: UseTableConfig) => {
     },
 
     /**
-     * @description 设置table组件的props
-     * @param props table组件的props
+     * @description SettingtableGroup件ofprops
+     * @param props tableGroup件ofprops
      */
     setProps: async (props: TableProps = {}) => {
       const table = await getTable()
@@ -104,8 +104,8 @@ export const useTable = (config: UseTableConfig) => {
     },
 
     /**
-     * @description 设置column
-     * @param columnProps 需要设置的列
+     * @description Settingcolumn
+     * @param columnProps 需WantSettingofColumn
      */
     setColumn: async (columnProps: TableSetProps[]) => {
       const table = await getTable()
@@ -114,8 +114,8 @@ export const useTable = (config: UseTableConfig) => {
 
     /**
      * @description 新增column
-     * @param tableColumn 需要新增数据
-     * @param index 在哪里新增
+     * @param tableColumn 需Want新增Data
+     * @param index In哪里新增
      */
     addColumn: async (tableColumn: TableColumn, index?: number) => {
       const table = await getTable()
@@ -123,8 +123,8 @@ export const useTable = (config: UseTableConfig) => {
     },
 
     /**
-     * @description 删除column
-     * @param field 删除哪个数据
+     * @description Deletecolumn
+     * @param field Delete哪个Data
      */
     delColumn: async (field: string) => {
       const table = await getTable()
@@ -132,7 +132,7 @@ export const useTable = (config: UseTableConfig) => {
     },
 
     /**
-     * @description 获取ElTable组件的实例
+     * @description GetElTableGroup件ofInstance
      * @returns ElTable instance
      */
     getElTableExpose: async () => {
@@ -150,7 +150,7 @@ export const useTable = (config: UseTableConfig) => {
     //   dataList.value.splice(newIndex, 0, dataList.value.splice(oldIndex, 1)[0])
     //   // to do something
     // }
-    // 删除数据
+    // DeleteData
     delList: async (idsLength: number) => {
       const { fetchDelApi } = config
       if (!fetchDelApi) {
@@ -166,7 +166,7 @@ export const useTable = (config: UseTableConfig) => {
         if (res) {
           ElMessage.success(t('common.delSuccess'))
 
-          // 计算出临界点
+          // Calculate出临界Point
           const current =
             unref(total) % unref(pageSize) === idsLength || unref(pageSize) === 1
               ? unref(currentPage) > 1

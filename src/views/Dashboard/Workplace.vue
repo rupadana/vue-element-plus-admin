@@ -21,7 +21,7 @@ import { set } from 'lodash-es'
 
 const loading = ref(true)
 
-// 获取统计数
+// GetStatistics数
 let totalSate = reactive<WorkplaceTotal>({
   project: 0,
   access: 0,
@@ -37,7 +37,7 @@ const getCount = async () => {
 
 let projects = reactive<Project[]>([])
 
-// 获取项目数
+// GetItem目数
 const getProject = async () => {
   const res = await getProjectApi().catch(() => {})
   if (res) {
@@ -45,7 +45,7 @@ const getProject = async () => {
   }
 }
 
-// 获取动态
+// GetDynamic
 let dynamics = reactive<Dynamic[]>([])
 
 const getDynamic = async () => {
@@ -55,7 +55,7 @@ const getDynamic = async () => {
   }
 }
 
-// 获取团队
+// Get团队
 let team = reactive<Team[]>([])
 
 const getTeam = async () => {
@@ -65,7 +65,7 @@ const getTeam = async () => {
   }
 }
 
-// 获取指数
+// Get指数
 const radarOptionData = reactive<EChartsOption>(radarOption) as EChartsOption
 
 const getRadar = async () => {

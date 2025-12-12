@@ -12,29 +12,29 @@ import { FormItemProp } from 'element-plus'
 import { isObject, isEmptyVal } from '@/utils/is'
 
 const props = defineProps({
-  // 生成Form的布局结构数组
+  // Generate Form layout structure array
   schema: {
     type: Array as PropType<FormSchema[]>,
     default: () => []
   },
-  // 是否需要栅格布局
+  // Whether grid layout is needed
   isCol: propTypes.bool.def(false),
-  // 表单label宽度
+  // Form label width
   labelWidth: propTypes.oneOfType([String, Number]).def('auto'),
-  // 操作按钮风格位置
+  // OperationBy钮StylePosition
   layout: propTypes.string.validate((v: string) => ['inline', 'bottom'].includes(v)).def('inline'),
-  // 底部按钮的对齐方式
+  // BottomBy钮ofAlignment
   buttonPosition: propTypes.string
     .validate((v: string) => ['left', 'center', 'right'].includes(v))
     .def('center'),
   showSearch: propTypes.bool.def(true),
   showReset: propTypes.bool.def(true),
-  // 是否显示伸缩
+  // Is否Show伸缩
   showExpand: propTypes.bool.def(false),
-  // 伸缩的界限字段
+  // 伸缩of界限Field
   expandField: propTypes.string.def(''),
   inline: propTypes.bool.def(true),
-  // 是否去除空值项
+  // Is否去除空ValueItem
   removeNoValueItem: propTypes.bool.def(true),
   model: {
     type: Object as PropType<Recordable>,
@@ -48,7 +48,7 @@ const emit = defineEmits(['search', 'reset', 'register', 'validate'])
 
 const visible = ref(true)
 
-// 表单数据
+// Form data
 const formModel = ref<Recordable>(props.model)
 
 const newSchema = computed(() => {
@@ -103,7 +103,7 @@ const newSchema = computed(() => {
 const { formRegister, formMethods } = useForm()
 const { getElFormExpose, getFormData, getFormExpose } = formMethods
 
-// useSearch传入的props
+// useSearchPass inofprops
 const outsideProps = ref<SearchProps>({})
 
 const mergeProps = ref<SearchProps>({})
@@ -122,7 +122,7 @@ const setProps = (props: SearchProps = {}) => {
 
 const schemaRef = ref<FormSchema[]>([])
 
-// 监听表单结构化数组，重新生成formModel
+// ListenTable单Structure化Array，ReGenerateformModel
 watch(
   () => unref(newSchema),
   async (schema = []) => {
@@ -138,7 +138,7 @@ watch(
 const filterModel = async () => {
   const model = await getFormData()
   if (unref(getProps).removeNoValueItem) {
-    // 使用reduce过滤空值，并返回一个新对象
+    // UsereduceFilter空Value，并Return一个新Object
     return Object.keys(model).reduce((prev, next) => {
       const value = model[next]
       if (!isEmptyVal(value)) {
@@ -194,7 +194,7 @@ const setSchema = (schemaProps: FormSetProps[]) => {
   }
 }
 
-// 对表单赋值
+// 对Table单赋Value
 const setValues = async (data: Recordable = {}) => {
   formModel.value = Object.assign(props.model, unref(formModel), data)
   const formExpose = await getFormExpose()

@@ -73,10 +73,10 @@ const schema = reactive<FormSchema[]>([
         width: '100%'
       },
       placeholder: 'admin or test',
-      // 按下enter键触发登录
+      // By下enterKeyTriggerLogin
       onKeydown: (_e: any) => {
         if (_e.key === 'Enter') {
-          _e.stopPropagation() // 阻止事件冒泡
+          _e.stopPropagation() // Prevent事件冒泡
           signIn()
         }
       }
@@ -227,7 +227,7 @@ watch(
   }
 )
 
-// 登录
+// Login
 const signIn = async () => {
   const formRef = await getElFormExpose()
   await formRef?.validate(async (isValid) => {
@@ -239,7 +239,7 @@ const signIn = async () => {
         const res = await loginApi(formData)
 
         if (res) {
-          // 是否记住我
+          // Is否记住我
           if (unref(remember)) {
             userStore.setLoginInfo({
               username: formData.username,
@@ -250,13 +250,13 @@ const signIn = async () => {
           }
           userStore.setRememberMe(unref(remember))
           userStore.setUserInfo(res.data)
-          // 是否使用动态路由
+          // Is否UseDynamicRoute
           if (appStore.getDynamicRouter) {
             getRole()
           } else {
             await permissionStore.generateRoutes('static').catch(() => {})
             permissionStore.getAddRouters.forEach((route) => {
-              addRoute(route as RouteRecordRaw) // 动态添加可访问路由表
+              addRoute(route as RouteRecordRaw) // Dynamic添加可AccessRouteTable
             })
             permissionStore.setIsAddRouters(true)
             push({ path: redirect.value || permissionStore.addRouters[0].path })
@@ -269,7 +269,7 @@ const signIn = async () => {
   })
 }
 
-// 获取角色信息
+// Get角色Information
 const getRole = async () => {
   const formData = await getFormData<UserType>()
   const params = {
@@ -287,14 +287,14 @@ const getRole = async () => {
       : await permissionStore.generateRoutes('frontEnd', routers).catch(() => {})
 
     permissionStore.getAddRouters.forEach((route) => {
-      addRoute(route as RouteRecordRaw) // 动态添加可访问路由表
+      addRoute(route as RouteRecordRaw) // Dynamic添加可AccessRouteTable
     })
     permissionStore.setIsAddRouters(true)
     push({ path: redirect.value || permissionStore.addRouters[0].path })
   }
 }
 
-// 去注册页面
+// 去RegisterPage面
 const toRegister = () => {
   emit('to-register')
 }

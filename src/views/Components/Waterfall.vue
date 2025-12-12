@@ -11,7 +11,7 @@ const data = ref<any>([])
 const getList = () => {
   const list: any = []
   for (let i = 0; i < 20; i++) {
-    // 随机 100, 500 之间的整数
+    // 随机 100, 500 之间ofInteger
     const height = Mock.Random.integer(100, 500)
     const width = Mock.Random.integer(100, 500)
     list.push(

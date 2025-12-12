@@ -45,7 +45,7 @@ const tagsViewIcon = computed(() => appStore.getTagsViewIcon)
 
 const isDark = computed(() => appStore.getIsDark)
 
-// 初始化tag
+// Initial化tag
 const initTags = () => {
   affixTagArr.value = filterAffixTags(unref(routers))
   for (const tag of unref(affixTagArr)) {
@@ -65,7 +65,7 @@ const addTags = () => {
   }
 }
 
-// 关闭选中的tag
+// Close选intag
 const closeSelectedTag = (view: RouteLocationNormalizedLoaded) => {
   closeCurrent(view, () => {
     if (isActive(view)) {
@@ -74,7 +74,7 @@ const closeSelectedTag = (view: RouteLocationNormalizedLoaded) => {
   })
 }
 
-// 去最后一个
+// 去最After一个
 const toLastView = () => {
   const visitedViews = tagsViewStore.getVisitedViews
   const latestView = visitedViews.slice(-1)[0]
@@ -93,34 +93,34 @@ const toLastView = () => {
   }
 }
 
-// 关闭全部
+// CloseAll
 const closeAllTags = () => {
   closeAll(() => {
     toLastView()
   })
 }
 
-// 关闭其它
+// Close其它
 const closeOthersTags = () => {
   closeOther()
 }
 
-// 重新加载
+// ReLoad
 const refreshSelectedTag = async (view?: RouteLocationNormalizedLoaded) => {
   refreshPage(view)
 }
 
-// 关闭左侧
+// Close左侧
 const closeLeftTags = () => {
   closeLeft()
 }
 
-// 关闭右侧
+// Close右侧
 const closeRightTags = () => {
   closeRight()
 }
 
-// 滚动到选中的tag
+// 滚动到选intag
 const moveToCurrentTag = async () => {
   await nextTick()
   for (const v of unref(visitedViews)) {
@@ -149,7 +149,7 @@ const moveToTarget = (currentTag: RouteLocationNormalizedLoaded) => {
     lastTag = tagList[tagList.length - 1]
   }
   if ((firstTag?.to as RouteLocationNormalizedLoaded).fullPath === currentTag.fullPath) {
-    // 直接滚动到0的位置
+    // 直接滚动到0ofPosition
     const { start } = useScrollTo({
       el: wrap$!,
       position: 'scrollLeft',
@@ -158,7 +158,7 @@ const moveToTarget = (currentTag: RouteLocationNormalizedLoaded) => {
     })
     start()
   } else if ((lastTag?.to as RouteLocationNormalizedLoaded).fullPath === currentTag.fullPath) {
-    // 滚动到最后的位置
+    // 滚动到最AfterofPosition
     const { start } = useScrollTo({
       el: wrap$!,
       position: 'scrollLeft',
@@ -202,15 +202,15 @@ const moveToTarget = (currentTag: RouteLocationNormalizedLoaded) => {
   }
 }
 
-// 是否是当前tag
+// Is否IsWhenBeforetag
 const isActive = (route: RouteLocationNormalizedLoaded): boolean => {
   return route.path === unref(currentRoute).path
 }
 
-// 所有右键菜单组件的元素
+// All右KeyMenuGroup件ofElement
 const itemRefs = useTemplateRefsList<ComponentRef<typeof ContextMenu & ContextMenuExpose>>()
 
-// 右键菜单状态改变的时候
+// 右KeyMenuStatus改变ofWhen候
 const visibleChange = (visible: boolean, tagItem: RouteLocationNormalizedLoaded) => {
   if (visible) {
     for (const v of unref(itemRefs)) {
@@ -223,17 +223,17 @@ const visibleChange = (visible: boolean, tagItem: RouteLocationNormalizedLoaded)
   }
 }
 
-// elscroll 实例
+// elscroll Instance
 const scrollbarRef = ref<ComponentRef<typeof ElScrollbar>>()
 
-// 保存滚动位置
+// Save滚动Position
 const scrollLeftNumber = ref(0)
 
 const scroll = ({ scrollLeft }) => {
   scrollLeftNumber.value = scrollLeft as number
 }
 
-// 移动到某个位置
+// Move到某个Position
 const move = (to: number) => {
   const wrap$ = unref(scrollbarRef)?.wrapRef
   const { start } = useScrollTo({

@@ -94,13 +94,13 @@ export default defineComponent({
       }
     )
 
-    // 是否显示菜单
+    // Is否ShowMenu
     const showMenu = ref(unref(fixedMenu) ? true : false)
 
     // tab高亮
     const tabActive = ref('')
 
-    // tab点击事件
+    // tabClick事件
     const tabClick = (item: AppRouteRecordRaw) => {
       if (isUrl(item.path)) {
         window.open(item.path)
@@ -129,7 +129,7 @@ export default defineComponent({
       }
     }
 
-    // 设置高亮
+    // Setting高亮
     const isActive = (currentPath: string) => {
       const { path } = unref(currentRoute)
       if (tabPathMap[currentPath].includes(path)) {

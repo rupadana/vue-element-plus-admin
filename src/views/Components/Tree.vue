@@ -141,43 +141,43 @@ const handleNodeClick = (data: any) => {
 }
 
 const addOrg = (node: any) => {
-  ElMessageBox.prompt('请输入分组名称', '添加子分组', {
+  ElMessageBox.prompt('PleaseInputGroup名称', '添加子Group', {
     confirmButtonText: '确定',
-    cancelButtonText: '取消',
+    cancelButtonText: 'Cancel',
     inputPattern: /\S/,
-    inputErrorMessage: '分组名称不能为空'
+    inputErrorMessage: 'Group名称不能Is empty'
   }).then(({ value }) => {
     node.children.push({
       id: node.children.length + 1,
       name: value,
       children: []
     })
-    ElMessage.success('添加成功')
+    ElMessage.success('添加Success')
   })
 }
 const editOrg = (node: any) => {
-  ElMessageBox.prompt('请输入新的分组名称', '修改分组名称', {
+  ElMessageBox.prompt('PleaseInput新ofGroup名称', 'ModifyGroup名称', {
     confirmButtonText: '确定',
-    cancelButtonText: '取消',
+    cancelButtonText: 'Cancel',
     inputValue: node.name,
     inputPattern: /\S/,
-    inputErrorMessage: '分组名称不能为空'
+    inputErrorMessage: 'Group名称不能Is empty'
   }).then(({ value }) => {
     node.name = value
-    ElMessage.success('修改成功')
+    ElMessage.success('ModifySuccess')
   })
 }
 
 const deleteOrg = (node: any) => {
-  ElMessageBox.confirm(`删除 [${node.name}] 分组、下级子分组 <br>是否继续?`, '提示', {
+  ElMessageBox.confirm(`Delete [${node.name}] Group、Subordinate subgroup <br>Is否继续?`, 'Tip', {
     dangerouslyUseHTMLString: true,
     confirmButtonText: '确定',
-    cancelButtonText: '取消',
+    cancelButtonText: 'Cancel',
     type: 'warning',
     center: true
   }).then(() => {
     const id = node.id
-    // 查找 treeData 中对应的节点，并删除
+    // Find treeData Corresponding node in，并Delete
     const deleteNode = (data: any) => {
       for (let i = 0; i < data.length; i++) {
         if (data[i].id === id) {
@@ -190,7 +190,7 @@ const deleteOrg = (node: any) => {
       }
     }
     deleteNode(treeData.value)
-    ElMessage.success('删除成功')
+    ElMessage.success('DeleteSuccess')
   })
 }
 </script>
@@ -211,23 +211,23 @@ const deleteOrg = (node: any) => {
       height="400px"
       @node-click="handleNodeClick"
     >
-      <!-- 自定义右键菜单 -->
+      <!-- 自Define右KeyMenu -->
       <template #context-menu="{ node }">
         <div class="menuItem" @click="addOrg(node)">
           <Icon icon="ep:plus" style="color: #1e9fff" />
-          <span>添加子分组</span>
+          <span>添加子Group</span>
         </div>
         <div class="menuItem" @click="editOrg(node)">
           <Icon icon="ep:edit-pen" style="color: #1e9fff" />
-          修改分组名称
+          ModifyGroup名称
         </div>
         <div class="menuItem" @click="deleteOrg(node)">
           <Icon icon="ep:delete" style="color: #1e9fff" />
-          删除分组及子分组
+          DeleteGroup及子Group
         </div>
       </template>
 
-      <!-- 自定义节点显示 -->
+      <!-- 自DefineNodeShow -->
       <!-- <template #render-node="{ node }">
       <span v-if="node.isLeaf">[FILE] {{ node.label }}</span>
       <span v-else>[FOLDER] {{ node.label }}</span>
@@ -242,7 +242,7 @@ const deleteOrg = (node: any) => {
   text-align: left;
   box-sizing: border-box;
   align-items: center; /* 垂直居中 */
-  gap: 5px; /* 图标和文字之间的间距，可根据需要调整 */
+  gap: 5px; /* IconAnd文字之间of间距，可According to需WantAdjust */
 }
 
 .menuItem:hover {

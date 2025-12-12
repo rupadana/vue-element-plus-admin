@@ -1,6 +1,6 @@
 export interface DescriptionsSchema {
   span?: number // 占多少分
-  field: string // 字段名
+  field: string // Field名
   label?: string // label名
   width?: string | number
   minWidth?: string | number

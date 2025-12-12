@@ -28,7 +28,7 @@ const oldColumns = ref<TableColumn[]>()
 
 const settingColumns = ref<TableColumn[]>()
 
-// 存储不要的列
+// Storage不WantofColumn
 const hiddenColumns = ref<TableColumn[]>([])
 
 const defaultCheckColumns = ref<string[]>([])
@@ -103,7 +103,7 @@ watch(
 </script>
 
 <template>
-  <ElDrawer v-model="modelValue" title="列设置" size="350px">
+  <ElDrawer v-model="modelValue" title="ColumnSetting" size="350px">
     <div>
       <div class="flex items-center justify-between">
         <div class="flex items-center justify-between">
@@ -114,7 +114,7 @@ watch(
           />
           <ElText class="ml-8px!">{{ checkColumns.length }} / {{ settingColumns?.length }}</ElText>
         </div>
-        <ElText>固定 / 排序</ElText>
+        <ElText>固定 / Sort</ElText>
       </div>
       <div v-if="settingColumns?.length">
         <VueDraggable
@@ -158,7 +158,7 @@ watch(
     </div>
     <template #footer>
       <div>
-        <BaseButton @click="restore">还原</BaseButton>
+        <BaseButton @click="restore">Also原</BaseButton>
         <BaseButton type="primary" @click="confirm">确定</BaseButton>
       </div>
     </template>

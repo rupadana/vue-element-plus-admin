@@ -8,9 +8,9 @@ const { t } = useI18n()
 
 /**
  *
- * @param schema 对应组件数据
- * @returns 返回提示信息对象
- * @description 用于自动设置placeholder
+ * @param schema CorrespondingGroup件Data
+ * @returns ReturnTipInformationObject
+ * @description Used forAutoSettingplaceholder
  */
 export const setTextPlaceholder = (schema: FormSchema): PlaceholderModel => {
   const textMap = [
@@ -32,7 +32,7 @@ export const setTextPlaceholder = (schema: FormSchema): PlaceholderModel => {
     }
   }
   if (selectMap.includes(schema?.component as ComponentNameEnum)) {
-    // 一些范围选择器
+    // Some range selectors
     const twoTextMap = ['datetimerange', 'daterange', 'monthrange', 'datetimerange', 'daterange']
     if (
       twoTextMap.includes(
@@ -56,13 +56,13 @@ export const setTextPlaceholder = (schema: FormSchema): PlaceholderModel => {
 
 /**
  *
- * @param col 内置栅格
- * @returns 返回栅格属性
- * @description 合并传入进来的栅格属性
+ * @param col Built-inGrid
+ * @returns ReturnGridProperty
+ * @description 合并Pass in进来ofGridProperty
  */
 export const setGridProp = (col: ColProps = {}): ColProps => {
   const colProps: ColProps = {
-    // 如果有span，代表用户优先级更高，所以不需要默认栅格
+    // Such as果Havespan，代TableUser优FirstLevel更高，所以不需WantDefaultGrid
     ...(col.span
       ? {}
       : {
@@ -79,12 +79,12 @@ export const setGridProp = (col: ColProps = {}): ColProps => {
 
 /**
  *
- * @param item 传入的组件属性
- * @returns 默认添加 clearable 属性
+ * @param item Pass inofGroup件Property
+ * @returns Default添加 clearable Property
  */
 export const setComponentProps = (item: FormSchema): Recordable => {
   // const notNeedClearable = ['ColorPicker']
-  // 拆分事件并组合
+  // Split事件并Group合
   const onEvents = (item?.componentProps as any)?.on || {}
   const newOnEvents: Recordable = {}
 
@@ -101,7 +101,7 @@ export const setComponentProps = (item: FormSchema): Recordable => {
     ...item.componentProps,
     ...newOnEvents
   }
-  // 需要删除额外的属性
+  // 需WantDelete额外ofProperty
   if (componentProps.slots) {
     delete componentProps.slots
   }
@@ -113,8 +113,8 @@ export const setComponentProps = (item: FormSchema): Recordable => {
 
 /**
  *
- * @param formModel 表单数据
- * @param slotsProps 插槽属性
+ * @param formModel Form data
+ * @param slotsProps SlotProperty
  */
 export const setItemComponentSlots = (slotsProps: Recordable = {}): Recordable => {
   const slotObj: Recordable = {}
@@ -136,10 +136,10 @@ export const setItemComponentSlots = (slotsProps: Recordable = {}): Recordable =
 
 /**
  *
- * @param schema Form表单结构化数组
+ * @param schema FormTable单Structure化Array
  * @param formModel FormMoel
  * @returns FormMoel
- * @description 生成对应的formModel
+ * @description GenerateCorrespondingofformModel
  */
 export const initModel = (schema: FormSchema[], formModel: Recordable) => {
   const model: Recordable = { ...formModel }
@@ -149,7 +149,7 @@ export const initModel = (schema: FormSchema[], formModel: Recordable) => {
     } else if (v.component !== 'Divider') {
       // const hasField = Reflect.has(model, v.field)
       const hasField = get(model, v.field)
-      // 如果先前已经有值存在，则不进行重新赋值，而是采用现有的值
+      // Such as果FirstBefore已经HaveValue存In，则不PerformRe赋Value，而IsAdopt现HaveofValue
       set(
         model,
         v.field,
@@ -158,7 +158,7 @@ export const initModel = (schema: FormSchema[], formModel: Recordable) => {
       // model[v.field] = hasField ? model[v.field] : v.value !== void 0 ? v.value : undefined
     }
   })
-  // 如果 schema 对应的 field 不存在，则删除 model 中的对应的 field
+  // Such as果 schema Correspondingof field Does not exist，则Delete model inCorrespondingof field
   for (let i = 0; i < schema.length; i++) {
     const key = schema[i].field
     if (!Object.prototype.hasOwnProperty.call(model, key)) {

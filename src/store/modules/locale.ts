@@ -23,7 +23,7 @@ export const useLocaleStore = defineStore('locales', {
         lang: getStorage('lang') || 'en',
         elLocale: elLocaleMap[getStorage('lang') || 'en']
       },
-      // 多语言
+      // 多Language
       localeMap: [
         {
           lang: 'zh-CN',
