@@ -10,7 +10,7 @@ const { required } = useValidator()
 const formSchema = reactive<FormSchema[]>([
   {
     field: 'password',
-    label: '旧Password',
+    label: 'Old Password',
     component: 'InputPassword',
     colProps: {
       span: 24
@@ -18,7 +18,7 @@ const formSchema = reactive<FormSchema[]>([
   },
   {
     field: 'newPassword',
-    label: '新Password',
+    label: 'New Password',
     component: 'InputPassword',
     colProps: {
       span: 24
@@ -29,7 +29,7 @@ const formSchema = reactive<FormSchema[]>([
   },
   {
     field: 'newPassword2',
-    label: '确认新Password',
+    label: 'Confirm New Password',
     component: 'InputPassword',
     colProps: {
       span: 24

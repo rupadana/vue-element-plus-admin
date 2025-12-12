@@ -11,14 +11,14 @@ const source = ref('')
 
 <template>
   <ContentWrap title="useClipboard">
-    <ElInput v-model="source" placeholder="PleaseInputWantCopyofContent" />
+    <ElInput v-model="source" placeholder="Please input content to copy" />
     <div v-if="isSupported">
       <BaseButton @click="copy(source)" type="primary" class="mt-20px">
         <span v-if="!copied">Copy</span>
-        <span v-else>已Copy</span>
+        <span v-else>Copied</span>
       </BaseButton>
       <p>
-        WhenBefore已Copy: <code>{{ text || 'none' }}</code>
+        Current copied: <code>{{ text || 'none' }}</code>
       </p>
     </div>
     <p v-else> 你of浏览器Not supported Clipboard API </p>

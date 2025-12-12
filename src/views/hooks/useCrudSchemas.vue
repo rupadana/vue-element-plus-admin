@@ -89,7 +89,7 @@ const crudSchemas = reactive<CrudSchema[]>([
         },
         options: [
           {
-            label: '重Want',
+            label: 'Important',
             value: 3
           },
           {
@@ -157,22 +157,22 @@ const { allSchemas } = useCrudSchemas(crudSchemas)
   <ContentWrap title="useCrudSchemas">
     <ElRow :gutter="20">
       <ElCol :span="24">
-        <ContentWrap title="原始DataData" class="mt-20px">
+        <ContentWrap title="Original Data" class="mt-20px">
           <JsonEditor v-model="crudSchemas" />
         </ContentWrap>
       </ElCol>
       <ElCol :span="24">
-        <ContentWrap title="QueryGroup件DataStructure" class="mt-20px">
+        <ContentWrap title="Search Component Data Structure" class="mt-20px">
           <JsonEditor v-model="allSchemas.searchSchema" />
         </ContentWrap>
       </ElCol>
       <ElCol :span="24">
-        <ContentWrap title="Table单Group件DataStructure" class="mt-20px">
+        <ContentWrap title="Form Component Data Structure" class="mt-20px">
           <JsonEditor v-model="allSchemas.formSchema" />
         </ContentWrap>
       </ElCol>
       <ElCol :span="24">
-        <ContentWrap title="Table格Group件DataStructure" class="mt-20px">
+        <ContentWrap title="Table Component Data Structure" class="mt-20px">
           <JsonEditor v-model="allSchemas.tableColumns" />
         </ContentWrap>
       </ElCol>
