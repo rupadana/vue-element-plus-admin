@@ -41,19 +41,19 @@ const setTabTitle = () => {
 }
 
 const setAnalysisTitle = () => {
-  setTitle(`分析Page-${new Date().getTime().toString()}`, '/dashboard/analysis')
+  setTitle(`Analysis Page-${new Date().getTime().toString()}`, '/dashboard/analysis')
 }
 </script>
 
 <template>
   <ContentWrap title="useTagsView">
-    <BaseButton type="primary" @click="closeAllTabs"> CloseAllTagPage </BaseButton>
-    <BaseButton type="primary" @click="closeLeftTabs"> Close左侧TagPage </BaseButton>
-    <BaseButton type="primary" @click="closeRightTabs"> Close右侧TagPage </BaseButton>
-    <BaseButton type="primary" @click="closeOtherTabs"> Close其他TagPage </BaseButton>
-    <BaseButton type="primary" @click="closeCurrentTab"> CloseWhenBeforeTagPage </BaseButton>
-    <BaseButton type="primary" @click="refresh"> 刷新WhenBeforeTagPage </BaseButton>
-    <BaseButton type="primary" @click="setTabTitle"> ModifyWhenBeforeTitle </BaseButton>
-    <BaseButton type="primary" @click="setAnalysisTitle"> Modify分析PageTitle </BaseButton>
+    <BaseButton type="primary" @click="closeAllTabs"> Close All Tabs </BaseButton>
+    <BaseButton type="primary" @click="closeLeftTabs"> Close Left Tabs </BaseButton>
+    <BaseButton type="primary" @click="closeRightTabs"> Close Right Tabs </BaseButton>
+    <BaseButton type="primary" @click="closeOtherTabs"> Close Other Tabs </BaseButton>
+    <BaseButton type="primary" @click="closeCurrentTab"> Close Current Tab </BaseButton>
+    <BaseButton type="primary" @click="refresh"> Refresh Current Tab </BaseButton>
+    <BaseButton type="primary" @click="setTabTitle"> Modify Current Title </BaseButton>
+    <BaseButton type="primary" @click="setAnalysisTitle"> Modify Analysis Page Title </BaseButton>
   </ContentWrap>
 </template>

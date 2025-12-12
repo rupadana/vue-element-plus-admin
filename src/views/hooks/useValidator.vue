@@ -20,7 +20,7 @@ const formSchema = reactive<FormSchema[]>([
   },
   {
     field: 'field2',
-    label: 'Length范围',
+    label: 'Length Range',
     component: 'Input'
   },
   {
@@ -35,12 +35,12 @@ const formSchema = reactive<FormSchema[]>([
   },
   {
     field: 'field5',
-    label: 'Is否相等-Value1',
+    label: 'Is Equal - Value1',
     component: 'Input'
   },
   {
     field: 'field6',
-    label: 'Is否相等-Value2',
+    label: 'Is Equal - Value2',
     component: 'Input'
   }
 ])
