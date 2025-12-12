@@ -20,7 +20,7 @@ const filterPermissionName = (value: string) => {
 }
 
 const renderTag = (enable?: boolean) => {
-  return <ElTag type={!enable ? 'danger' : 'success'}>{enable ? '启用' : '禁用'}</ElTag>
+  return <ElTag type={!enable ? 'danger' : 'success'}>{enable ? 'Enable' : 'Disable'}</ElTag>
 }
 
 const treeRef = ref<typeof ElTree>()
@@ -47,7 +47,7 @@ const detailSchema = ref<DescriptionsSchema[]>([
   },
   {
     field: 'status',
-    label: '状态',
+    label: 'Status',
     slots: {
       default: (data: any) => {
         return renderTag(data.status)
@@ -56,12 +56,12 @@ const detailSchema = ref<DescriptionsSchema[]>([
   },
   {
     field: 'remark',
-    label: '备注',
+    label: 'Remark',
     span: 24
   },
   {
     field: 'permissionList',
-    label: '菜单分配',
+    label: 'Menu分配',
     span: 24,
     slots: {
       default: () => {

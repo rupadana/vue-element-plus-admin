@@ -22,7 +22,7 @@ const currentLang = computed(() => localeStore.getCurrentLocale)
 
 const setLang = (lang: LocaleType) => {
   if (lang === unref(currentLang).lang) return
-  // 需要重新加载页面让整个语言多初始化
+  // 需WantReLoadPage面让WholeLanguage多Initial化
   window.location.reload()
   localeStore.setCurrentLocale({
     lang

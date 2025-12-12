@@ -56,7 +56,7 @@ export default defineComponent({
             {{
               default: () => {
                 return (
-                  <div title="尺寸" class="w-30px h-20px flex items-center justify-end">
+                  <div title="Size" class="w-30px h-20px flex items-center justify-end">
                     <Icon
                       icon="vi-ant-design:column-height-outlined"
                       class="cursor-pointer"
@@ -86,7 +86,7 @@ export default defineComponent({
           </ElDropdown>
 
           <div
-            title="列设置"
+            title="ColumnSetting"
             class="w-30px h-20px flex items-center justify-end"
             onClick={showColumnSetting}
           >

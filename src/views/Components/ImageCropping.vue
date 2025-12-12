@@ -22,7 +22,7 @@ const getBase642 = () => {
 </script>
 
 <template>
-  <ContentWrap title="图片裁剪">
+  <ContentWrap title="Image裁剪">
     <BaseButton type="primary" class="mb-20px" @click="getBase64">裁剪</BaseButton>
     <ElInput v-model="base64" class="mb-20px" type="textarea" />
     <ImageCropping

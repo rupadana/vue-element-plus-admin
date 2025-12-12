@@ -33,7 +33,7 @@ const formSchema = reactive<FormSchema[]>([
   },
   {
     field: 'email',
-    label: '邮箱',
+    label: 'Email',
     component: 'Input',
     colProps: {
       span: 24
@@ -68,16 +68,16 @@ const save = async () => {
     console.log(err)
   })
   if (valid) {
-    ElMessageBox.confirm('是否确认修改?', '提示', {
-      confirmButtonText: '确认',
-      cancelButtonText: '取消',
+    ElMessageBox.confirm('Are you sure to modify?', 'Tip', {
+      confirmButtonText: 'Confirm',
+      cancelButtonText: 'Cancel',
       type: 'warning'
     })
       .then(async () => {
         try {
           saveLoading.value = true
-          // 这里可以调用修改用户信息接口
-          ElMessage.success('修改成功')
+          // This can call modify user information interface
+          ElMessage.success('Modified successfully')
         } catch (error) {
           console.log(error)
         } finally {
@@ -92,5 +92,5 @@ const save = async () => {
 <template>
   <Form :rules="rules" @register="formRegister" :schema="formSchema" />
   <ElDivider />
-  <BaseButton type="primary" @click="save">保存</BaseButton>
+  <BaseButton type="primary" @click="save">Save</BaseButton>
 </template>

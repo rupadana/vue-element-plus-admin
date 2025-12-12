@@ -18,19 +18,19 @@ const appStore = useAppStore()
 // 面包屑
 const breadcrumb = computed(() => appStore.getBreadcrumb)
 
-// 折叠图标
+// 折叠Icon
 const hamburger = computed(() => appStore.getHamburger)
 
-// 全屏图标
+// 全屏Icon
 const screenfull = computed(() => appStore.getScreenfull)
 
-// 尺寸图标
+// SizeIcon
 const size = computed(() => appStore.getSize)
 
-// 布局
+// Layout
 const layout = computed(() => appStore.getLayout)
 
-// 多语言图标
+// 多LanguageIcon
 const locale = computed(() => appStore.getLocale)
 
 export default defineComponent({

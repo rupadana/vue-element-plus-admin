@@ -147,7 +147,7 @@ export const forEach = <T = any>(
   const list: any[] = [...tree]
   const { children } = config
   for (let i = 0; i < list.length; i++) {
-    // func 返回true就终止遍历，避免大量节点场景下无意义循环，引起浏览器卡顿
+    // func Returntrue就终止Traverse，避免大AmountNode场景下NoMeaning循环，引From浏览器卡顿
     if (func(list[i])) {
       return
     }
@@ -192,10 +192,10 @@ export const treeMapEach = (
 }
 
 /**
- * 递归遍历树结构
+ * RecursiveTraverse树Structure
  * @param treeDatas 树
- * @param callBack 回调
- * @param parentNode 父节点
+ * @param callBack Callback
+ * @param parentNode ParentNode
  */
 export const eachTree = (treeDatas: any[], callBack: Fn, parentNode = {}) => {
   treeDatas.forEach((element) => {

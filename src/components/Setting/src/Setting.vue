@@ -25,7 +25,7 @@ const { t } = useI18n()
 
 const drawer = ref(false)
 
-// 主题色相关
+// 主题色Related
 const systemTheme = ref(appStore.getTheme.elColorPrimary)
 
 const setSystemTheme = (color: string) => {
@@ -35,21 +35,21 @@ const setSystemTheme = (color: string) => {
   setMenuTheme(trim(unref(leftMenuBgColor) as string))
 }
 
-// 头部主题相关
+// 头部主题Related
 const headerTheme = ref(appStore.getTheme.topHeaderBgColor || '')
 
 const setHeaderTheme = (color: string) => {
   appStore.setHeaderTheme(color)
 }
 
-// 菜单主题相关
+// Menu主题Related
 const menuTheme = ref(appStore.getTheme.leftMenuBgColor || '')
 
 const setMenuTheme = (color: string) => {
   appStore.setMenuTheme(color)
 }
 
-// 监听layout变化，重置一些主题色
+// Listenlayout变化，Reset一些主题色
 // watch(
 //   () => layout.value,
 //   (n) => {
@@ -68,65 +68,65 @@ const copyConfig = async () => {
     source: `
       // 面包屑
       breadcrumb: ${appStore.getBreadcrumb},
-      // 面包屑图标
+      // 面包屑Icon
       breadcrumbIcon: ${appStore.getBreadcrumbIcon},
-      // 折叠图标
+      // 折叠Icon
       hamburger: ${appStore.getHamburger},
-      // 全屏图标
+      // 全屏Icon
       screenfull: ${appStore.getScreenfull},
-      // 尺寸图标
+      // SizeIcon
       size: ${appStore.getSize},
-      // 多语言图标
+      // 多LanguageIcon
       locale: ${appStore.getLocale},
-      // 标签页
+      // TagPage
       tagsView: ${appStore.getTagsView},
-      // 标签页图标
+      // TagPageIcon
       getTagsViewIcon: ${appStore.getTagsViewIcon},
       // logo
       logo: ${appStore.getLogo},
-      // 菜单手风琴
+      // Menu手风琴
       uniqueOpened: ${appStore.getUniqueOpened},
       // 固定header
       fixedHeader: ${appStore.getFixedHeader},
-      // 页脚
+      // Page脚
       footer: ${appStore.getFooter},
-      // 灰色模式
+      // 灰色Mode
       greyMode: ${appStore.getGreyMode},
-      // layout布局
+      // layoutLayout
       layout: '${appStore.getLayout}',
-      // 暗黑模式
+      // 暗黑Mode
       isDark: ${appStore.getIsDark},
-      // 组件尺寸
+      // Group件Size
       currentSize: '${appStore.getCurrentSize}',
-      // 主题相关
+      // 主题Related
       theme: {
         // 主题色
         elColorPrimary: '${appStore.getTheme.elColorPrimary}',
-        // 左侧菜单边框颜色
+        // 左侧Menu边Box颜色
         leftMenuBorderColor: '${appStore.getTheme.leftMenuBorderColor}',
-        // 左侧菜单背景颜色
+        // 左侧MenuBackground颜色
         leftMenuBgColor: '${appStore.getTheme.leftMenuBgColor}',
-        // 左侧菜单浅色背景颜色
+        // 左侧MenuLightBackground颜色
         leftMenuBgLightColor: '${appStore.getTheme.leftMenuBgLightColor}',
-        // 左侧菜单选中背景颜色
+        // 左侧菜Radio中Background颜色
         leftMenuBgActiveColor: '${appStore.getTheme.leftMenuBgActiveColor}',
-        // 左侧菜单收起选中背景颜色
+        // 左侧MenuCollapseSelectedBackground颜色
         leftMenuCollapseBgActiveColor: '${appStore.getTheme.leftMenuCollapseBgActiveColor}',
-        // 左侧菜单字体颜色
+        // 左侧Menu字体颜色
         leftMenuTextColor: '${appStore.getTheme.leftMenuTextColor}',
-        // 左侧菜单选中字体颜色
+        // 左侧菜Radio中字体颜色
         leftMenuTextActiveColor: '${appStore.getTheme.leftMenuTextActiveColor}',
         // logo字体颜色
         logoTitleTextColor: '${appStore.getTheme.logoTitleTextColor}',
-        // logo边框颜色
+        // logo边Box颜色
         logoBorderColor: '${appStore.getTheme.logoBorderColor}',
-        // 头部背景颜色
+        // 头部Background颜色
         topHeaderBgColor: '${appStore.getTheme.topHeaderBgColor}',
         // 头部字体颜色
         topHeaderTextColor: '${appStore.getTheme.topHeaderTextColor}',
         // 头部悬停颜色
         topHeaderHoverColor: '${appStore.getTheme.topHeaderHoverColor}',
-        // 头部边框颜色
+        // 头部边Box颜色
         topToolBorderColor: '${appStore.getTheme.topToolBorderColor}'
       }
     `,
@@ -142,7 +142,7 @@ const copyConfig = async () => {
   }
 }
 
-// 清空缓存
+// ClearCache
 const clear = () => {
   storageClear()
   window.location.reload()
@@ -168,11 +168,11 @@ const clear = () => {
       <ElDivider>{{ t('setting.theme') }}</ElDivider>
       <ThemeSwitch />
 
-      <!-- 布局 -->
+      <!-- Layout -->
       <ElDivider>{{ t('setting.layout') }}</ElDivider>
       <LayoutRadioPicker />
 
-      <!-- 系统主题 -->
+      <!-- System主题 -->
       <ElDivider>{{ t('setting.systemTheme') }}</ElDivider>
       <ColorRadioPicker
         v-model="systemTheme"
@@ -206,7 +206,7 @@ const clear = () => {
         @change="setHeaderTheme"
       />
 
-      <!-- 菜单主题 -->
+      <!-- Menu主题 -->
       <ElDivider>{{ t('setting.menuTheme') }}</ElDivider>
       <ColorRadioPicker
         v-model="menuTheme"
@@ -224,7 +224,7 @@ const clear = () => {
       />
     </div>
 
-    <!-- 界面显示 -->
+    <!-- 界面Show -->
     <ElDivider>{{ t('setting.interfaceDisplay') }}</ElDivider>
     <InterfaceDisplay />
 

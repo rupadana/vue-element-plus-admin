@@ -20,10 +20,10 @@ export const useLocaleStore = defineStore('locales', {
   state: (): LocaleState => {
     return {
       currentLocale: {
-        lang: getStorage('lang') || 'zh-CN',
-        elLocale: elLocaleMap[getStorage('lang') || 'zh-CN']
+        lang: getStorage('lang') || 'en',
+        elLocale: elLocaleMap[getStorage('lang') || 'en']
       },
-      // 多语言
+      // Multi-language
       localeMap: [
         {
           lang: 'zh-CN',

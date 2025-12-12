@@ -98,7 +98,7 @@ const cancelAll = () => {
   pending.value.clear()
 }
 
-// set转数组
+// set转Array
 const setToArray = (set: Set<string>) => {
   const arr: string[] = []
   set.forEach((item) => {
@@ -159,15 +159,15 @@ const tokenExpired = () => {
 
 <template>
   <ContentWrap :title="t('router.request')">
-    <p>正在请求的接口：{{ setToArray(pending) }}</p>
-    <BaseButton type="primary" @click="clickRequest1">请求/取消request1</BaseButton>
-    <BaseButton type="primary" @click="clickRequest2">请求/取消request2</BaseButton>
-    <BaseButton type="primary" @click="clickRequest3">请求/取消request3</BaseButton>
-    <BaseButton type="primary" @click="clickRequest4">请求/取消request4</BaseButton>
-    <BaseButton type="primary" @click="clickRequest5">请求/取消request5</BaseButton>
-    <BaseButton type="primary" @click="getAll">发送五个请求</BaseButton>
-    <BaseButton type="primary" @click="cancelAll">关闭所有请求</BaseButton>
+    <p>正InPlease求ofInterface：{{ setToArray(pending) }}</p>
+    <BaseButton type="primary" @click="clickRequest1">Please求/Cancelrequest1</BaseButton>
+    <BaseButton type="primary" @click="clickRequest2">Please求/Cancelrequest2</BaseButton>
+    <BaseButton type="primary" @click="clickRequest3">Please求/Cancelrequest3</BaseButton>
+    <BaseButton type="primary" @click="clickRequest4">Please求/Cancelrequest4</BaseButton>
+    <BaseButton type="primary" @click="clickRequest5">Please求/Cancelrequest5</BaseButton>
+    <BaseButton type="primary" @click="getAll">发送五个Please求</BaseButton>
+    <BaseButton type="primary" @click="cancelAll">CloseAllPlease求</BaseButton>
     <ElDivider />
-    <BaseButton type="primary" @click="tokenExpired">token过期</BaseButton>
+    <BaseButton type="primary" @click="tokenExpired">tokenExpire</BaseButton>
   </ContentWrap>
 </template>

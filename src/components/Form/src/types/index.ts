@@ -129,7 +129,7 @@ export interface SelectOption {
 
 export interface SelectComponentProps extends Omit<Partial<ISelectProps>, 'options'> {
   /**
-   * 数据源的字段别名
+   * DataSourceofField别名
    */
   props?: {
     key?: string
@@ -286,7 +286,7 @@ export interface RadioOption {
 export interface RadioGroupComponentProps extends Partial<RadioGroupProps> {
   options?: RadioOption[]
   /**
-   * 数据源的字段别名
+   * DataSourceofField别名
    */
   props?: {
     label?: string
@@ -305,7 +305,7 @@ export interface RadioGroupComponentProps extends Partial<RadioGroupProps> {
 export interface RadioButtonComponentProps extends Partial<RadioButtonProps> {
   options?: RadioOption[]
   /**
-   * 数据源的字段别名
+   * DataSourceofField别名
    */
   props?: {
     label?: string
@@ -342,7 +342,7 @@ export interface CheckboxOption {
 export interface CheckboxGroupComponentProps extends Partial<CheckboxGroupProps> {
   options?: CheckboxOption[]
   /**
-   * 数据源的字段别名
+   * DataSourceofField别名
    */
   props?: {
     label?: string
@@ -588,22 +588,22 @@ export interface TreeSelectComponentProps
 
 export interface FormSchema {
   /**
-   * 唯一标识
+   * 唯一ID
    */
   field: string
 
   /**
-   * 标题
+   * Title
    */
   label?: string
 
   /**
-   * col组件属性
+   * colGroup件Property
    */
   colProps?: ColProps
 
   /**
-   * 表单组件属性，具体可以查看element-plus文档
+   * Table单Group件Property，具体Can查看element-plusDocument
    */
   componentProps?:
     | InputComponentProps
@@ -630,32 +630,32 @@ export interface FormSchema {
     | any
 
   /**
-   * formItem组件属性，具体可以查看element-plus文档
+   * formItemGroup件Property，具体Can查看element-plusDocument
    */
   formItemProps?: FormItemProps
 
   /**
-   * 渲染的组件名称
+   * RenderofGroup件名称
    */
   component?: ComponentName
 
   /**
-   * 初始值
+   * InitialValue
    */
   value?: any
 
   /**
-   * 是否隐藏，如果为true，会连同值一同删除，类似v-if
+   * Is否Hide，Such as果为true，会连同Value一同Delete，Class似v-if
    */
   remove?: boolean
 
   /**
-   * 样式隐藏，不会把值一同删掉，类似v-show
+   * StyleHide，Will not delete the value together，Class似v-show
    */
   hidden?: boolean
 
   /**
-   * @returns 远程加载下拉项
+   * @returns 远程Load下拉Item
    */
   optionApi?: any
 }

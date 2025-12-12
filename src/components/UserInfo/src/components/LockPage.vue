@@ -47,13 +47,13 @@ async function unLock() {
   }
 }
 
-// 返回登录
+// ReturnLogin
 async function goLogin() {
   const res = await loginOutApi().catch(() => {})
   if (res) {
     clear()
     tagsViewStore.delAllViews()
-    resetRouter() // 重置静态路由表
+    resetRouter() // Reset静态RouteTable
     lockStore.resetLockInfo()
     replace('/login')
   }

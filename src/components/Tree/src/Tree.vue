@@ -25,14 +25,14 @@ const menuStyle = ref<any>({})
 const defaultWidth = '300px'
 const defaultHeight = '400px'
 
-// 关闭菜单
+// CloseMenu
 const closeTreeMenu = () => {
   showTreeMenu.value = false
   document.removeEventListener('click', closeTreeMenu)
   document.removeEventListener('contextmenu', closeTreeMenu)
 }
 
-// 右键菜单事件处理函数
+// 右KeyMenu事件Process函数
 const openTreeMenu = (event: MouseEvent, data: any, _node: any, _target: HTMLElement) => {
   contextNode.value = data
   if (!treeContainer.value) return
@@ -40,7 +40,7 @@ const openTreeMenu = (event: MouseEvent, data: any, _node: any, _target: HTMLEle
   const containerRect = treeContainer.value.getBoundingClientRect()
   const nodeRect = (event.target as HTMLElement).getBoundingClientRect()
 
-  // 计算菜单相对于父容器定位的坐标
+  // CalculateMenu相ForParent容器定位of坐标
   const top = nodeRect.top - containerRect.top + treeContainer.value.scrollTop
   const left = nodeRect.left - containerRect.left + treeContainer.value.scrollLeft
 
@@ -52,30 +52,30 @@ const openTreeMenu = (event: MouseEvent, data: any, _node: any, _target: HTMLEle
 
   showTreeMenu.value = true
 
-  // 点击其他地方或再次右键关闭菜单
+  // Click其他地方Or再次右KeyCloseMenu
   document.addEventListener('click', closeTreeMenu)
   document.addEventListener('contextmenu', closeTreeMenu)
 }
 
-// 节点点击事件
+// NodeClick事件
 const handleNodeClick = (data: any) => {
   emit('node-click', data)
   closeTreeMenu()
 }
 
-// 节点展开事件
+// NodeExpand事件
 const handleNodeExpand = (data: any) => {
   emit('node-expand', data)
   closeTreeMenu()
 }
 
-// 节点关闭事件
+// NodeClose事件
 const handleNodeCollapse = (data: any) => {
   emit('node-collapse', data)
   closeTreeMenu()
 }
 
-// 计算容器样式
+// Calculate容器Style
 const containerStyle: CSSProperties = {
   position: 'relative',
   overflow: 'auto',
@@ -94,20 +94,20 @@ const containerStyle: CSSProperties = {
       @node-contextmenu="openTreeMenu"
     >
       <template #default="{ node }">
-        <!-- 如果使用者提供了 render-node slot，则渲染使用者的内容 -->
+        <!-- Such as果UseOr提供了 render-node slot，则RenderUseOrofContent -->
         <template v-if="$slots['render-node']">
           <slot name="render-node" :node="node"></slot>
         </template>
-        <!-- 否则使用默认节点显示（比如使用 node.label ）-->
+        <!-- OtherwiseUseDefaultNodeShow（比Such asUse node.label ）-->
         <template v-else>
           <span>{{ node.label }}</span>
         </template>
       </template>
     </ElTree>
     <div class="treeMenu" v-show="showTreeMenu" :style="menuStyle">
-      <!-- 用户通过 context-menu slot 来自定义菜单内容 -->
+      <!-- UserThrough context-menu slot 来自DefineMenuContent -->
       <slot name="context-menu" :node="contextNode" :data="contextNode">
-        <!-- 如果用户不提供 context-menu slot，可给一个默认内容 -->
+        <!-- Such as果User不提供 context-menu slot，可给一个DefaultContent -->
         <div style="padding: 8px">No menu defined</div>
       </slot>
     </div>
@@ -125,20 +125,20 @@ const containerStyle: CSSProperties = {
   border-radius: 5px;
   box-shadow: 0 4px 10px rgb(0 0 0 / 40%);
 
-  /* 移除 overflow: hidden; 或尝试不使用负的 top 值 */
+  /* Remove overflow: hidden; Or尝试不Use负of top Value */
 
   /* overflow: hidden; */
 
   &::after {
     position: absolute;
 
-    /* 将箭头向上移动到菜单外部 */
+    /* 将箭头向上Move到Menu外部 */
     top: -6px;
     left: 50%;
     border-right: 6px solid transparent;
     border-bottom: 6px solid rgb(206 194 194);
 
-    /* 创建一个向上的箭头 */
+    /* Create一个向上of箭头 */
     border-left: 6px solid transparent;
     content: '';
     transform: translateX(-50%);

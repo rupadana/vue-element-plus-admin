@@ -10,7 +10,7 @@ const { required } = useValidator()
 const formSchema = reactive<FormSchema[]>([
   {
     field: 'password',
-    label: '旧密码',
+    label: 'Old Password',
     component: 'InputPassword',
     colProps: {
       span: 24
@@ -18,7 +18,7 @@ const formSchema = reactive<FormSchema[]>([
   },
   {
     field: 'newPassword',
-    label: '新密码',
+    label: 'New Password',
     component: 'InputPassword',
     colProps: {
       span: 24
@@ -29,7 +29,7 @@ const formSchema = reactive<FormSchema[]>([
   },
   {
     field: 'newPassword2',
-    label: '确认新密码',
+    label: 'Confirm New Password',
     component: 'InputPassword',
     colProps: {
       span: 24
@@ -49,7 +49,7 @@ const rules = reactive({
         const formData = await getFormData()
         const { newPassword2 } = formData
         if (val !== newPassword2) {
-          callback(new Error('新密码与确认新密码不一致'))
+          callback(new Error('New password and confirm password do not match'))
         } else {
           callback()
         }
@@ -63,7 +63,7 @@ const rules = reactive({
         const formData = await getFormData()
         const { newPassword } = formData
         if (val !== newPassword) {
-          callback(new Error('确认新密码与新密码不一致'))
+          callback(new Error('Confirm password and new password do not match'))
         } else {
           callback()
         }
@@ -82,16 +82,16 @@ const save = async () => {
     console.log(err)
   })
   if (valid) {
-    ElMessageBox.confirm('是否确认修改?', '提示', {
-      confirmButtonText: '确认',
-      cancelButtonText: '取消',
+    ElMessageBox.confirm('Are you sure to modify?', 'Tip', {
+      confirmButtonText: 'Confirm',
+      cancelButtonText: 'Cancel',
       type: 'warning'
     })
       .then(async () => {
         try {
           saveLoading.value = true
-          // 这里可以调用修改密码的接口
-          ElMessage.success('修改成功')
+          // This can call modify password interface
+          ElMessage.success('Modified successfully')
         } catch (error) {
           console.log(error)
         } finally {
@@ -106,5 +106,5 @@ const save = async () => {
 <template>
   <Form :rules="rules" @register="formRegister" :schema="formSchema" />
   <ElDivider />
-  <BaseButton type="primary" @click="save">确认修改</BaseButton>
+  <BaseButton type="primary" @click="save">Confirm</BaseButton>
 </template>

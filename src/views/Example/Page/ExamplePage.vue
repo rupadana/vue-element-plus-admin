@@ -143,7 +143,7 @@ const crudSchemas = reactive<CrudSchema[]>([
         },
         options: [
           {
-            label: '重要',
+            label: 'Important',
             value: 3
           },
           {
@@ -151,7 +151,7 @@ const crudSchemas = reactive<CrudSchema[]>([
             value: 2
           },
           {
-            label: '一般',
+            label: 'Normal',
             value: 1
           }
         ]

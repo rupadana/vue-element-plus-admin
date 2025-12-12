@@ -12,10 +12,10 @@ const prefixCls = getPrefixCls('layout')
 
 const appStore = useAppStore()
 
-// 是否是移动端
+// Is否IsMove端
 const mobile = computed(() => appStore.getMobile)
 
-// 菜单折叠
+// Menu折叠
 const collapse = computed(() => appStore.getCollapse)
 
 const layout = computed(() => appStore.getLayout)
