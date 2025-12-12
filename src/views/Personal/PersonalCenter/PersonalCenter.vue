@@ -10,7 +10,7 @@ import EditPassword from './components/EditPassword.vue'
 
 const userInfo = ref()
 const fetchDetailUserApi = async () => {
-  // This里CanCallInterfaceGetUserInformation
+  // This can call interface to get user information
   const data = {
     id: 1,
     username: 'admin',
@@ -18,7 +18,7 @@ const fetchDetailUserApi = async () => {
     phoneNumber: '18888888888',
     email: '502431556@qq.com',
     avatarUrl: '',
-    roleList: ['超Level管理员']
+    roleList: ['Super Administrator']
   }
   userInfo.value = data
 }
@@ -35,9 +35,9 @@ const saveAvatar = async () => {
     avatarLoading.value = true
     const base64 = unref(uploadAvatarRef)?.getBase64()
     console.log(base64)
-    // This里CanCallModifyAvatarInterface
+    // This can call modify avatar interface
     fetchDetailUserApi()
-    ElMessage.success('ModifySuccess')
+    ElMessage.success('Modified successfully')
     dialogVisible.value = false
   } catch (error) {
     console.log(error)
@@ -74,17 +74,17 @@ const saveAvatar = async () => {
       </div>
       <ElDivider />
       <div class="flex justify-between items-center">
-        <div>手机号码：</div>
+        <div>Phone Number:</div>
         <div>{{ userInfo?.phoneNumber ?? '-' }}</div>
       </div>
       <ElDivider />
       <div class="flex justify-between items-center">
-        <div>UserEmail：</div>
+        <div>User Email:</div>
         <div>{{ userInfo?.email ?? '-' }}</div>
       </div>
       <ElDivider />
       <div class="flex justify-between items-center">
-        <div>Belong角色：</div>
+        <div>Role:</div>
         <div>
           <template v-if="userInfo?.roleList?.length">
             <ElTag v-for="item in userInfo?.roleList || []" :key="item" class="ml-2 mb-w"
